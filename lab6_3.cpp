@@ -1,8 +1,32 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 char before(char x){
-	//Write your function definition here
+	char resuit;
+	string text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+	int i = 0;
+	while (i < 26)
+	{
+		if(x == text[i]){
+			if(x == text[0]){
+				resuit = 'Z';
+				i += 26;
+			}
+			else{
+				resuit = x-1;
+				i += 26;
+			}
+		}
+		else{
+			i++;
+			if(i > 25){
+				resuit = '0';
+				i += 26;
+			}
+		}
+	}
+	return resuit;
 }
 
 int main(){
